@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput} from 'react-native';
 import { globalStyles } from '../../styles/globalStyles';
 import { formStyles } from '../../styles/formStyles';
+
+// Importation du composant Button
+import Button from '../Button';
 
 const LoginPage = () => {
   // États pour suivre les valeurs des champs et les focus

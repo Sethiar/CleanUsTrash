@@ -1,6 +1,9 @@
 import React from 'react';
-import { View, Text, Button, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { globalStyles } from '../../styles/globalStyles';
+
+// Importation du composant Button
+import Button from '../Button';
 
 // Importation des fonctions de navigation
 import { goToLoginPage, goToSignUpPage } from '../../navigation/navigation';
@@ -15,15 +18,15 @@ const AuthPage = ({ navigation }) => {
         onPress={() => navigation.goBack()}
       />
 
-      {/* Lien vers la page de connexion */}
-      <TouchableOpacity onPress={() => goToLoginPage(navigation)}>
-        <Text style={{ color: 'blue', marginTop: 20 }}>Se connecter</Text>
-      </TouchableOpacity>
+      <Button
+        title="Se connecter"
+        onPress={() => goToLoginPage(navigation)}
+      />
 
-      {/* Lien vers la page d'inscription */}
-      <TouchableOpacity onPress={() => goToSignUpPage(navigation)}>
-        <Text style={{ color: 'blue', marginTop: 20 }}>S'inscrire</Text>
-      </TouchableOpacity>
+      <Button
+        title="S'inscrire"
+        onPress={() => goToSignUpPage(navigation)}
+      />
     </View>
   );
 };

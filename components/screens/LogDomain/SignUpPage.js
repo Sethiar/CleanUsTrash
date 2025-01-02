@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, ScrollView } from 'react-native';
+import { View, Text, TextInput, ScrollView } from 'react-native';
 import { globalStyles } from '../../styles/globalStyles';
 import { formStyles } from '../../styles/formStyles';
+
+// Importation du composant Button
+import Button from '../Button';
 
 const SignUpPage = () => {
 
