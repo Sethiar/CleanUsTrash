@@ -40,10 +40,10 @@ export const globalStyles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
-    justifyContent: 'flex-start', // Placer l'image au début (au tiers de l'écran)
-    alignItems: 'center', // Centrer horizontalement
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     position: 'relative',
-    height: height / 4, // Limiter la hauteur du conteneur à un tiers de l'écran
+    height: height / 4,
   },
   image: {
    width: 260,
