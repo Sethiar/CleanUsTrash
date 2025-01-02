@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput} from 'react-native';
-import { globalStyles } from '../../styles/globalStyles';
-import { formStyles } from '../../styles/formStyles';
+import { globalStyles } from '../../../styles/globalStyles';
+import { formStyles } from '../../../styles/formStyles';
 
 // Importation du composant Button
-import Button from '../Button';
+import Button from '../../Button';
 
-const LoginPage = () => {
+import { goToSignInSuccess } from '../../../navigation/navigation';
+
+const LoginPage = ({ navigation }) => {
   // États pour suivre les valeurs des champs et les focus
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -72,7 +74,7 @@ const LoginPage = () => {
         {/* Bouton de connexion */}
         <Button
           title="Se connecter"
-          onPress={handleLogin}
+          onPress={() => goToSignInSuccess(navigation)}
         />
       </View>
     </View>

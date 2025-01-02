@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { globalStyles } from '../../styles/globalStyles';
+import { globalStyles } from '../../../styles/globalStyles';
 
 // Importation du composant Button
-import Button from '../Button';
+import Button from '../../Button';
 
 // Importation des fonctions de navigation
-import { goToLoginPage, goToSignUpPage } from '../../navigation/navigation';
+import { goToLoginPage, goToSignUpPage } from '../../../navigation/navigation';
 
 
 const AuthPage = ({ navigation }) => {

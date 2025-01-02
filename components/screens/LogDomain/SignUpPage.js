@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, ScrollView } from 'react-native';
-import { globalStyles } from '../../styles/globalStyles';
-import { formStyles } from '../../styles/formStyles';
+import { globalStyles } from '../../../styles/globalStyles';
+import { formStyles } from '../../../styles/formStyles';
 
 // Importation du composant Button
-import Button from '../Button';
+import Button from '../../Button';
 
-const SignUpPage = () => {
+// Importation des fonctions de navigation
+import { goToSignUpSuccess } from '../../../navigation/navigation';
+
+const SignUpPage = ({ navigation }) => {
 
   // État pour suivre le focus des champs d'entrée
     const [isUsernameFocused, setIsUsernameFocused] = useState(false);
@@ -64,7 +67,13 @@ const SignUpPage = () => {
             onBlur={() => setIsLocationFocused(false)}
           />
 
-          <Button title="S'inscrire" onPress={() => { console.log('Inscription en cours...'); }} />
+          <Button
+            title="S'inscrire"
+            onPress={() => {
+             console.log('Inscription en cours...');
+              goToSignUpSuccess(navigation);
+            }}
+          />
         </View>
       </View>
     </ScrollView>
