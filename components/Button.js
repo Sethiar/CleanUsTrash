@@ -1,12 +1,23 @@
+import { TouchableOpacity, Text,  } from 'react-native';
+
+import React, { useState } from 'react';
+
 // Importation des styles
-import { buttonStyles } from '../../styles/buttonStyles';
+import { buttonStyles } from '../styles/buttonStyles';
 
 // Importation des couleurs
-import { colors } from '../../styles/colors';
+import { colors } from '../styles/colors';
 
 const Button = ({ title, onPress }) => {
   // Etat pour savoir si le bouton est pressé
   const [isPressed, setIsPressed] = useState(false);
+
+  // Fonction pour gérer la pression sur le bouton
+  const handlePress = () => {
+    if (onPress) {
+      onPress(); // Appel de la fonction onPress passé en prop
+    }
+  };
 
   return (
     <TouchableOpacity
@@ -23,6 +34,7 @@ const Button = ({ title, onPress }) => {
       onPressIn={() => setIsPressed(true)}
       // Lorsque le bouton est relaché
       onPressOut={() => setIsPressed(false)}
+      onPress={handlePress}
       >
 
       <Text style={buttonStyles.buttonText}>{ title }</Text>
