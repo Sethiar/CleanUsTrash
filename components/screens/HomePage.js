@@ -7,14 +7,10 @@ import Button from '../Button';
 
 import { useNavigation } from '@react-navigation/native';  // Import du hook useNavigation
 
-const HomePage = () => {
-  const navigation = useNavigation();  // Utilisation du hook pour obtenir navigation
+// Importation des fonctions de navigation
+import { goToAuthPage } from '../../navigation/navigation';
 
-  // Déclare la fonction goToAuthPage
-  const goToAuthPage = () => {
-    console.log('Navigating to Auth Page');  // Log pour tester si la fonction est appelée
-    navigation.navigate('Auth');  // Naviguer vers l'écran "Auth"
-  };
+const HomePage = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
