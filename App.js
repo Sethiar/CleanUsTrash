@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
 
-export default function App() {
+import AppNavigator from './navigation/AppNavigator';  // Importation du fichier AppNavigator
+import { SafeAreaView } from 'react-native';
+
+// Import des styles globaux
+import { globalStyles } from './styles/globalStyles';
+
+// Import du hook useFonts
+import { useFonts } from 'expo-font';
+
+const App = () => {
+  const [fontsLoaded] = useFonts({
+    'KellySlab': require('./assets/fonts/KellySlab-Regular.ttf'),
+  });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppNavigator />
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
